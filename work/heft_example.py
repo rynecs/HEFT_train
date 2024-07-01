@@ -7,6 +7,7 @@
 # ### Introduction
 # 
 # In this notebook, we model the HEFT di-Higgs cross section[1] (per 15 GeV in the di-Higgs mass, $m_{hh}$) in which the 15 GeV bin size is mapped to a dimensionless value of 0.01. The HEFT parameter space is defined by the 5 parameters $\theta = \kappa_\Lambda ( \equiv c_{hhh}), c_{t}, c_{tt}, c_{ggh}, c_{gghh}$. The goal of this notebook is to approximate the probability density $p(x | \theta)$, where $x = m_{hh}$.
+# If on command line, run in ipython to prevent any errors
 
 # In[ ]:
 
@@ -113,6 +114,8 @@ print('test set size:         %6d' % test_data.shape[0])
 
 train_data[:5]
 
+
+# This following bit looks much better in a jupyter notebook
 
 # ### Empirical risk (that is, average loss)
 # 
