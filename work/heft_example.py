@@ -37,7 +37,7 @@ import importlib
 # some simple dnn untilities
 import dnnutil as dn
 
-get_ipython().run_line_magic('matplotlib', 'inline')
+# get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # In[ ]:
@@ -138,7 +138,7 @@ train_data[:5]
 # In[ ]:
 
 
-get_ipython().run_cell_magic('writefile', 'hhnet.py', "import torch\nimport torch.nn as nn\nimport numpy as np\n\nname     = 'hhnet'\nfeatures = ['hh_mass', 'klambda', 'ct', 'ctt', 'cggh', 'cgghh']\ntarget   = 'target'\n#play with the nodes\nnodes    = 20\nnoutputs =  1\n\n#reduce from 5 to something lower\nmodel = nn.Sequential(nn.Linear(len(features), nodes), nn.SiLU(),\n                      nn.Linear(nodes, nodes), nn.SiLU(),\n                      nn.Linear(nodes, nodes), nn.SiLU(),\n                      nn.Linear(nodes, nodes), nn.SiLU(),\n                      nn.Linear(nodes, nodes), nn.SiLU(),\n                      nn.Linear(nodes, noutputs), nn.Sigmoid()\n                     )\n")
+# get_ipython().run_cell_magic('writefile', 'hhnet.py', "import torch\nimport torch.nn as nn\nimport numpy as np\n\nname     = 'hhnet'\nfeatures = ['hh_mass', 'klambda', 'ct', 'ctt', 'cggh', 'cgghh']\ntarget   = 'target'\n#play with the nodes\nnodes    = 20\nnoutputs =  1\n\n#reduce from 5 to something lower\nmodel = nn.Sequential(nn.Linear(len(features), nodes), nn.SiLU(),\n                      nn.Linear(nodes, nodes), nn.SiLU(),\n                      nn.Linear(nodes, nodes), nn.SiLU(),\n                      nn.Linear(nodes, nodes), nn.SiLU(),\n                      nn.Linear(nodes, nodes), nn.SiLU(),\n                      nn.Linear(nodes, noutputs), nn.Sigmoid()\n                     )\n")
 
 
 # In[ ]:
