@@ -60,6 +60,16 @@ mean = df['mhh'].mean()
 df['mhh'] = df['mhh']/(2*mean)
 df['freq'] = df['freq']/10
 
+# Fraction of the data assigned as test data and validation
+ntrain    = 190000                # training sample size
+tfraction = (1-ntrain/len(df))/2 # test fraction
+vfraction = tfraction            # validation fraction
+
+# Split data into a part for training, validation, and testing
+train_data, valid_data, test_data = dn.split_data(df, 
+                                         test_fraction=tfraction, 
+                                         validation_fraction=vfraction) 
+
 import hhfreq as NN
 importlib.reload(NN)
 
