@@ -21,9 +21,7 @@ from sklearn.model_selection import train_test_split
 import importlib
 
 # some simple dnn untilities
-import dnnutil as dn
-
-%matplotlib inline
+import dnnutilf as dn
 
 # update fonts
 FONTSIZE = 12
@@ -44,7 +42,7 @@ rnd  = np.random.RandomState(seed)
 
 
 
-datafile = '../work/freqtrain.csv'
+datafile = '../freq/freqtrain.csv'
 
 df  = pd.read_csv(datafile)
 
