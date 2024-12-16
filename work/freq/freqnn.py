@@ -91,4 +91,31 @@ print('number of parameters: %d\n' % dn.number_of_parameters(model))
 
 ## set model parameters
 
+traces = ([], [], [])
 
+traces_step   = 100
+#play w batch size and lr
+n_batch       =  128     #32
+n_iterations  = 250000
+early_stopping=  10000
+learning_rate = 1.e-3   #1e-3
+
+## run model
+
+av_loss = dn.average_quadratic_loss
+#try quadratic loss
+
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate) #adam
+
+traces = dn.train(model, optimizer, 
+                  modelfile, early_stopping,
+                  av_loss,
+                  dn.get_batch, 
+                  train_data, valid_data,
+                  features, target,
+                  n_batch, 
+                  n_iterations,
+                  traces,
+                  step=traces_step)
+
+dn.plot_average_loss(traces)
