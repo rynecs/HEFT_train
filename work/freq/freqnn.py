@@ -1,7 +1,5 @@
 import os, sys
 
-import tkinter
-
 # the standard module for tabular data
 import pandas as pd
 
@@ -10,7 +8,6 @@ import numpy as np
 
 # the standard modules for high-quality plots
 import matplotlib as mp
-mp.use('TkAgg')
 import matplotlib.pyplot as plt
 
 # pytorch
